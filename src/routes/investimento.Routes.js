@@ -1,17 +1,16 @@
 import express from 'express';
-import investimentoController from '../controllers/investimentoController.js'
+import * as investimentoController from '../controllers/investimentoController.js';
 
 const router = express.Router();
 
-router.post('/', investimentoController);
+router.post('/', investimentoController.criarInvestimento);
 
-router.put('/:investimentoId', investimentoController);
+router.put('/:investimentoId', investimentoController.atualizarInvestimento);
 
-router.delete('/:investimentoId', investimentoController)
+router.delete('/:investimentoId', investimentoController.deletarInvestimento);
 
-router.get('/', investimentoController);
+router.get('/', investimentoController.buscarTodosInvestimentos);
 
-router.get('/:investimentoId', investimentoController);
-
+router.get('/:investimentoId', investimentoController.buscarInvestimentoPorId);
 
 export default router;
